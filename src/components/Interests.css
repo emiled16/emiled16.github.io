@@ -1,0 +1,174 @@
+.interests {
+  background: var(--light);
+}
+
+.interests-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #64748b;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  line-height: 1.8;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 5rem;
+}
+
+.interest-card {
+  background: white;
+  border-radius: 25px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.interest-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--interest-color);
+}
+
+.interest-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.interest-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.interest-icon {
+  font-size: 4rem;
+  color: var(--interest-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--interest-color)22, var(--interest-color)11);
+  border-radius: 50%;
+}
+
+.interest-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dark);
+}
+
+.interest-description {
+  color: #64748b;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.interest-topics h4 {
+  color: var(--dark);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.topics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.topic-tag {
+  padding: 0.5rem 1rem;
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.topic-tag:hover {
+  background: var(--interest-color);
+  color: white;
+  border-color: var(--interest-color);
+  transform: scale(1.05);
+}
+
+.lifestyle-section {
+  margin-top: 4rem;
+  padding: 3rem;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.lifestyle-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: var(--dark);
+}
+
+.lifestyle-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.lifestyle-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 15px;
+  background: var(--light);
+  transition: all 0.3s ease;
+}
+
+.lifestyle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lifestyle-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.lifestyle-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+}
+
+.lifestyle-card p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lifestyle-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-card {
+    padding: 2rem;
+  }
+}

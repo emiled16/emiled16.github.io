@@ -1,0 +1,104 @@
+.about {
+  background: var(--light);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-intro {
+  font-size: 1.3rem;
+  color: var(--dark);
+}
+
+.about-text strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-card:nth-child(1) {
+  background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+}
+
+.highlight-card:nth-child(2) {
+  background: linear-gradient(135deg, #f093fb22 0%, #f5576c22 100%);
+}
+
+.highlight-card:nth-child(3) {
+  background: linear-gradient(135deg, #4facfe22 0%, #00f2fe22 100%);
+}
+
+.highlight-card:nth-child(4) {
+  background: linear-gradient(135deg, #43e97b22 0%, #38f9d722 100%);
+}
+
+.highlight-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.highlight-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-intro {
+    font-size: 1.1rem;
+  }
+}
