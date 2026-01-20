@@ -1,11 +1,11 @@
 .interests {
-  background: var(--light);
+  background: var(--bg-primary);
 }
 
 .interests-intro {
   text-align: center;
-  font-size: 1.2rem;
-  color: #64748b;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
   max-width: 800px;
   margin: 0 auto 4rem;
   line-height: 1.8;
@@ -19,13 +19,14 @@
 }
 
 .interest-card {
-  background: white;
-  border-radius: 25px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
   padding: 3rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--border-color);
 }
 
 .interest-card::before {
@@ -34,13 +35,13 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
+  height: 4px;
   background: var(--interest-color);
 }
 
 .interest-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px var(--shadow-hover);
 }
 
 .interest-icon-wrapper {
@@ -50,35 +51,36 @@
 }
 
 .interest-icon {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--interest-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(135deg, var(--interest-color)22, var(--interest-color)11);
+  width: 90px;
+  height: 90px;
+  background: var(--bg-primary);
   border-radius: 50%;
+  border: 1px solid var(--border-color);
 }
 
 .interest-title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: center;
   margin-bottom: 1.5rem;
-  color: var(--dark);
+  color: var(--text-primary);
 }
 
 .interest-description {
-  color: #64748b;
+  color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 2rem;
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 .interest-topics h4 {
-  color: var(--dark);
+  color: var(--text-primary);
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
@@ -92,13 +94,13 @@
 
 .topic-tag {
   padding: 0.5rem 1rem;
-  background: var(--light);
-  color: var(--dark);
-  border-radius: 20px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 8px;
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
 }
 
 .topic-tag:hover {
@@ -111,16 +113,17 @@
 .lifestyle-section {
   margin-top: 4rem;
   padding: 3rem;
-  background: white;
-  border-radius: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px var(--shadow);
+  border: 1px solid var(--border-color);
 }
 
 .lifestyle-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 2.5rem;
-  color: var(--dark);
+  color: var(--text-primary);
 }
 
 .lifestyle-cards {
@@ -132,14 +135,15 @@
 .lifestyle-card {
   text-align: center;
   padding: 2rem;
-  border-radius: 15px;
-  background: var(--light);
-  transition: all 0.3s ease;
+  border-radius: 12px;
+  background: var(--bg-primary);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
 }
 
 .lifestyle-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px var(--shadow-hover);
 }
 
 .lifestyle-emoji {
@@ -150,11 +154,11 @@
 .lifestyle-card h4 {
   font-size: 1.3rem;
   margin-bottom: 0.75rem;
-  color: var(--dark);
+  color: var(--text-primary);
 }
 
 .lifestyle-card p {
-  color: #64748b;
+  color: var(--text-secondary);
   line-height: 1.6;
   font-size: 0.95rem;
 }

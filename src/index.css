@@ -5,14 +5,46 @@
 }
 
 :root {
-  --primary: #6366f1;
-  --secondary: #ec4899;
-  --accent: #10b981;
-  --dark: #1e293b;
-  --light: #f8fafc;
-  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  /* Light theme colors - Mria inspired */
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+  --accent: #06b6d4;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --border-color: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+  
+  /* Subtle gradients for accents */
+  --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-2: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --gradient-3: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  
+  /* Smooth transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --primary: #60a5fa;
+  --secondary: #a78bfa;
+  --accent: #22d3ee;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --border-color: #334155;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.5);
+  
+  /* Adjusted gradients for dark mode */
+  --gradient: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  --gradient-2: linear-gradient(135deg, #22d3ee 0%, #60a5fa 100%);
+  --gradient-3: linear-gradient(135deg, #a78bfa 0%, #f472b6 100%);
 }
 
 body {
@@ -21,10 +53,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--light);
-  color: var(--dark);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
@@ -48,10 +81,6 @@ button {
   font-family: inherit;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
@@ -59,14 +88,15 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--light);
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
+  background: var(--border-color);
   border-radius: 5px;
+  transition: var(--transition);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary);
+  background: var(--primary);
 }

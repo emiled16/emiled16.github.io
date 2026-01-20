@@ -1,5 +1,5 @@
 .about {
-  background: var(--light);
+  background: var(--bg-secondary);
 }
 
 .about-content {
@@ -10,9 +10,9 @@
 }
 
 .about-text {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.8;
-  color: #475569;
+  color: var(--text-secondary);
 }
 
 .about-text p {
@@ -20,8 +20,9 @@
 }
 
 .about-intro {
-  font-size: 1.3rem;
-  color: var(--dark);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .about-text strong {
@@ -36,48 +37,50 @@
 }
 
 .highlight-card {
-  background: white;
+  background: var(--bg-primary);
   padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: var(--transition);
   text-align: center;
+  border: 1px solid var(--border-color);
 }
 
 .highlight-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-hover);
+  border-color: var(--primary);
 }
 
-.highlight-card:nth-child(1) {
-  background: linear-gradient(135deg, #667eea22 0%, #764ba222 100%);
+.highlight-card:nth-child(1) .highlight-icon {
+  color: var(--primary);
 }
 
-.highlight-card:nth-child(2) {
-  background: linear-gradient(135deg, #f093fb22 0%, #f5576c22 100%);
+.highlight-card:nth-child(2) .highlight-icon {
+  color: var(--secondary);
 }
 
-.highlight-card:nth-child(3) {
-  background: linear-gradient(135deg, #4facfe22 0%, #00f2fe22 100%);
+.highlight-card:nth-child(3) .highlight-icon {
+  color: var(--accent);
 }
 
-.highlight-card:nth-child(4) {
-  background: linear-gradient(135deg, #43e97b22 0%, #38f9d722 100%);
+.highlight-card:nth-child(4) .highlight-icon {
+  color: #10b981;
 }
 
 .highlight-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .highlight-card h3 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: var(--dark);
+  color: var(--text-primary);
 }
 
 .highlight-card p {
-  color: #64748b;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
 }

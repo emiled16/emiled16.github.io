@@ -1,29 +1,36 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
   return (
-    <section className="hero section" id="hero">
+    <section className="hero section">
       <div className="hero-container">
-        <div className="hero-content">
-          <div className="hero-greeting">
-            <span className="wave">👋</span> Hi, I'm
-          </div>
+        {/* Left Side - Image */}
+        <div className="hero-image-side">
+          <img src="/images/profile_pic.jpeg" alt="Emile Dimas" className="hero-profile-image" />
+        </div>
+
+        {/* Right Side - Content */}
+        <div className="hero-content-side">
           <h1 className="hero-title">
             <span className="gradient-text">Emile Dimas</span>
           </h1>
           <h2 className="hero-subtitle">
-            Polyvalent Technologist & Problem Solver
+            Machine Learning Engineer & Polyvalent Technologist
           </h2>
+          
           <p className="hero-description">
-            Bridging the worlds of Machine Learning, Data Science, Software Engineering, 
-            Data Engineering, and DevOps to build innovative solutions.
+            5+ years building end-to-end ML systems spanning Machine Learning, Data Science, 
+            Software Engineering, Data Engineering, and DevOps. When I'm not deploying production 
+            models, you'll find me exploring <strong>philosophy</strong>, <strong>finance</strong>, 
+            and <strong>geopolitics</strong> — or reading Dostoevsky after a long hike.
           </p>
           
           <div className="hero-cta">
-            <a href="#contact" className="btn btn-primary">Get In Touch</a>
-            <a href="#projects" className="btn btn-secondary">View Projects</a>
+            <Link to="/resume" className="btn btn-primary">View Resume</Link>
+            <Link to="/contact" className="btn btn-secondary">Get In Touch</Link>
           </div>
 
           <div className="hero-socials">
@@ -33,22 +40,11 @@ const Hero = () => {
             <a href="https://linkedin.com/in/emile-dimas" target="_blank" rel="noopener noreferrer" className="social-link">
               <FaLinkedin />
             </a>
-            <a href="mailto:emile.dimas@example.com" className="social-link">
+            <a href="mailto:emiled16@gmail.com" className="social-link">
               <FaEnvelope />
             </a>
           </div>
         </div>
-
-        <div className="hero-visual">
-          <div className="floating-card card-1">ML</div>
-          <div className="floating-card card-2">Data</div>
-          <div className="floating-card card-3">DevOps</div>
-          <div className="floating-card card-4">Software</div>
-        </div>
-      </div>
-
-      <div className="scroll-indicator">
-        <div className="mouse"></div>
       </div>
     </section>
   );

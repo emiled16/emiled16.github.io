@@ -18,13 +18,20 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    alert('Form submission functionality needs to be connected to a backend service!');
-    console.log('Form data:', formData);
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Message from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:emiled16@gmail.com?subject=${subject}&body=${body}`;
   };
 
   return (
-    <section className="contact section" id="contact">
+    <section className="contact section no-min-height">
       <div className="container">
         <h2 className="section-title">Let's Connect</h2>
         
@@ -42,11 +49,11 @@ const Contact = () => {
             </p>
 
             <div className="contact-methods">
-              <a href="mailto:emile.dimas@example.com" className="contact-method">
+              <a href="mailto:emiled16@gmail.com" className="contact-method">
                 <FaEnvelope className="method-icon" />
                 <div>
                   <h4>Email</h4>
-                  <p>emile.dimas@example.com</p>
+                  <p>emiled16@gmail.com</p>
                 </div>
               </a>
 
@@ -66,7 +73,7 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a href="https://twitter.com/emile_dimas" target="_blank" rel="noopener noreferrer" className="contact-method">
+              <a href="https://x.com/dimasemile" target="_blank" rel="noopener noreferrer" className="contact-method">
                 <FaTwitter className="method-icon" />
                 <div>
                   <h4>Twitter</h4>
@@ -123,8 +130,7 @@ const Contact = () => {
             </button>
 
             <p className="form-note">
-              Note: Connect this form to a backend service like Formspree, EmailJS, 
-              or your own API endpoint to receive messages.
+              Note: This will open your default email client with the message pre-filled.
             </p>
           </form>
         </div>

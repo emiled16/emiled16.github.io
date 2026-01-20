@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { FaBars, FaTimes, FaMoon, FaSun } from 'react-icons/fa';
 import './Navigation.css';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const location = useLocation();
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Interests', href: '#interests' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', path: '/' },
+    { name: 'Resume', path: '/resume' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Books', path: '/books' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
 
   const handleNavClick = () => {
     setIsOpen(false);
@@ -23,26 +35,31 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <div className="nav-logo">
+        <Link to="/" className="nav-logo">
           <span className="logo-text">ED</span>
-        </div>
+        </Link>
         
         <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              className="nav-link"
+              to={item.path}
+              className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
               onClick={handleNavClick}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
 
-        <button className="nav-toggle" onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        <div className="nav-controls">
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'light' ? <FaMoon /> : <FaSun />}
+          </button>
+          <button className="nav-toggle" onClick={toggleMenu}>
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
     </nav>
   );

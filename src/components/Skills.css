@@ -1,5 +1,5 @@
 .skills {
-  background: white;
+  background: var(--bg-primary);
 }
 
 .skills-grid {
@@ -9,17 +9,17 @@
 }
 
 .skill-category {
-  background: white;
-  border-radius: 20px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
 }
 
 .skill-category:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px var(--shadow-hover);
   border-color: var(--category-color);
 }
 
@@ -31,20 +31,21 @@
 }
 
 .category-icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: var(--category-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--category-color)22, var(--category-color)11);
-  border-radius: 15px;
+  width: 55px;
+  height: 55px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
 }
 
 .category-title {
-  font-size: 1.5rem;
-  color: var(--dark);
+  font-size: 1.4rem;
+  color: var(--text-primary);
   flex: 1;
 }
 
@@ -56,13 +57,13 @@
 
 .skill-tag {
   padding: 0.5rem 1rem;
-  background: var(--light);
-  color: var(--dark);
-  border-radius: 20px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.3s ease;
-  border: 1px solid #e2e8f0;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
 }
 
 .skill-tag:hover {

@@ -1,24 +1,31 @@
 import React from 'react';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Interests from './components/Interests';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
+import HomePage from './pages/HomePage';
+import ResumePage from './pages/ResumePage';
+import ProjectsPage from './pages/ProjectsPage';
+import BooksPage from './pages/BooksPage';
+import BookDetailPage from './pages/BookDetailPage';
+import BlogPage from './pages/BlogPage';
+import ContactPage from './pages/ContactPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-      <Hero />
-      <About />
-      <Skills />
-      <Interests />
-      <Projects />
-      <Contact />
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/resume" element={<ResumePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/books" element={<BooksPage />} />
+          <Route path="/books/:bookId" element={<BookDetailPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

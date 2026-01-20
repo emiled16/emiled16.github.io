@@ -37,7 +37,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="skills section" id="skills">
+    <section className="skills section no-min-height">
       <div className="container">
         <h2 className="section-title">Technical Expertise</h2>
         

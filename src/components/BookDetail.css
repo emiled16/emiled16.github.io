@@ -1,0 +1,259 @@
+.book-detail {
+  background: var(--bg-secondary);
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: var(--transition);
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateX(-3px);
+}
+
+/* Book Header */
+.book-detail-header {
+  background: var(--bg-primary);
+  border-radius: 20px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border-color);
+  display: flex;
+  gap: 3rem;
+  align-items: start;
+}
+
+.book-detail-cover {
+  width: 200px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+.book-detail-info {
+  flex: 1;
+}
+
+.book-detail-title {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.book-detail-author {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.book-detail-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.book-meta-item {
+  padding: 0.5rem 1.2rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.book-detail-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Book Content */
+.book-detail-content {
+  background: var(--bg-primary);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.book-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Markdown Styling */
+.book-content-wrapper h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--primary);
+}
+
+.book-content-wrapper h2:first-child {
+  margin-top: 0;
+}
+
+.book-content-wrapper h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.book-content-wrapper h4 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.book-content-wrapper p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 1.25rem;
+}
+
+.book-content-wrapper strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.book-content-wrapper ul,
+.book-content-wrapper ol {
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+
+.book-content-wrapper li {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.book-content-wrapper blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.book-content-wrapper code {
+  background: var(--bg-secondary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: var(--primary);
+  border: 1px solid var(--border-color);
+}
+
+.book-content-wrapper pre {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--border-color);
+}
+
+.book-content-wrapper pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  color: var(--text-primary);
+}
+
+.book-content-wrapper a {
+  color: var(--primary);
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.book-content-wrapper a:hover {
+  color: var(--secondary);
+}
+
+.book-content-wrapper hr {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: 2rem 0;
+}
+
+@media (max-width: 968px) {
+  .book-detail-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .book-detail-cover {
+    width: 160px;
+    height: 240px;
+  }
+
+  .book-detail-title {
+    font-size: 2rem;
+  }
+
+  .book-detail-author {
+    font-size: 1.2rem;
+  }
+
+  .book-detail-content {
+    padding: 2rem;
+  }
+
+  .book-content-wrapper {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-detail-header {
+    padding: 1.5rem;
+  }
+
+  .book-detail-title {
+    font-size: 1.6rem;
+  }
+
+  .book-detail-content {
+    padding: 1.5rem;
+  }
+
+  .book-content-wrapper h2 {
+    font-size: 1.6rem;
+  }
+
+  .book-content-wrapper h3 {
+    font-size: 1.3rem;
+  }
+}

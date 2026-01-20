@@ -28,7 +28,7 @@ const Interests = () => {
   ];
 
   return (
-    <section className="interests section" id="interests">
+    <section className="interests section no-min-height">
       <div className="container">
         <h2 className="section-title">Beyond Technology</h2>
         
