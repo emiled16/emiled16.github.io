@@ -1,26 +1,20 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaCalendar, FaClock, FaTimes } from 'react-icons/fa';
+import { blogsData } from '../data/blogsData';
 import './Blog.css';
 
 const Blog = () => {
-  // Template blog post - add your own blog posts by following this structure
-  const blogPosts = [
-    {
-      id: 1,
-      title: 'Blog Post Title',
-      excerpt: 'Brief description or excerpt of the blog post goes here. This will be displayed as a preview on the blog page.',
-      date: '2024-01-20',
-      readTime: '5 min read',
-      tags: ['Tag1', 'Tag2', 'Tag3'],
-      image: 'https://via.placeholder.com/800x400/667eea/ffffff?text=Blog+Post'
-    }
-  ];
+  const blogPosts = blogsData;
 
   // Define tag colors - add your own tags and colors here
   const tagColors = {
-    'Tag1': '#667eea',
-    'Tag2': '#f5576c',
-    'Tag3': '#43e97b'
+    'Machine Learning': '#667eea',
+    'MLOps': '#f5576c',
+    'Data Engineering': '#43e97b',
+    'Snowflake': '#4facfe',
+    'DevOps': '#fa709a',
+    'AI': '#a8edea'
   };
 
   const [selectedTags, setSelectedTags] = useState([]);
@@ -132,48 +126,57 @@ const Blog = () => {
         <div className="blog-grid">
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => (
-              <article key={post.id} className="blog-card">
-                <div className="blog-image" style={{ backgroundImage: `url(${post.image})` }}>
-                  <div className="blog-overlay"></div>
-                </div>
-                
-                <div className="blog-content">
-                  <div className="blog-meta">
-                    <span className="blog-date">
-                      <FaCalendar /> {new Date(post.date).toLocaleDateString('en-US', { 
-                        year: 'numeric', 
-                        month: 'short', 
-                        day: 'numeric' 
-                      })}
-                    </span>
-                    <span className="blog-read-time">
-                      <FaClock /> {post.readTime}
-                    </span>
+              <Link 
+                key={post.id} 
+                to={`/blog/${post.id}`}
+                className="blog-card-link"
+              >
+                <article className="blog-card">
+                  <div className="blog-image" style={{ backgroundImage: `url(${post.image})` }}>
+                    <div className="blog-overlay"></div>
                   </div>
-
-                  <h3 className="blog-title">{post.title}</h3>
-                  <p className="blog-excerpt">{post.excerpt}</p>
-
-                  <div className="blog-tags">
-                    {post.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="blog-tag"
-                        style={{
-                          backgroundColor: `${tagColors[tag] || '#6366f1'}20`,
-                          color: tagColors[tag] || '#6366f1',
-                          borderColor: tagColors[tag] || '#6366f1'
-                        }}
-                        onClick={() => toggleTag(tag)}
-                      >
-                        {tag}
+                  
+                  <div className="blog-content">
+                    <div className="blog-meta">
+                      <span className="blog-date">
+                        <FaCalendar /> {new Date(post.date).toLocaleDateString('en-US', { 
+                          year: 'numeric', 
+                          month: 'short', 
+                          day: 'numeric' 
+                        })}
                       </span>
-                    ))}
-                  </div>
+                      <span className="blog-read-time">
+                        <FaClock /> {post.readTime}
+                      </span>
+                    </div>
 
-                  <button className="read-more-btn">Read More →</button>
-                </div>
-              </article>
+                    <h3 className="blog-title">{post.title}</h3>
+                    <p className="blog-excerpt">{post.excerpt}</p>
+
+                    <div className="blog-tags">
+                      {post.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="blog-tag"
+                          style={{
+                            backgroundColor: `${tagColors[tag] || '#6366f1'}20`,
+                            color: tagColors[tag] || '#6366f1',
+                            borderColor: tagColors[tag] || '#6366f1'
+                          }}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            toggleTag(tag);
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <button className="read-more-btn">Read More →</button>
+                  </div>
+                </article>
+              </Link>
             ))
           ) : (
             <div className="no-results">

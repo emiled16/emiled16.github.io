@@ -7,6 +7,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import BooksPage from './pages/BooksPage';
 import BookDetailPage from './pages/BookDetailPage';
 import BlogPage from './pages/BlogPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import ContactPage from './pages/ContactPage';
 import './App.css';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/books" element={<BooksPage />} />
           <Route path="/books/:bookId" element={<BookDetailPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogDetailPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
